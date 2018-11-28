@@ -20,7 +20,7 @@ Task.createTask = function createTask(newTask, result) {
 };
 
 Task.getTaskById = function getTaskById(taskId, result) {
-    sql.query("Select task from tasks where id = ? ", taskId, function (err, res) {
+    sql.query("Select * from tasks where id = ? ", taskId, function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(err, null);
